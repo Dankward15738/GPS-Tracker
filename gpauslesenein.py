@@ -1,6 +1,6 @@
 #!/usr/bin/python3                                                                                                                                #!/usr/bin/pythoimport serial
 from time import sleep
-
+import serial
 ser=serial.Serial("/dev/ttyACM0",9600)
 try:
     received_data = ser.read(500)
