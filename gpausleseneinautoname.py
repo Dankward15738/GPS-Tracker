@@ -38,10 +38,12 @@ try:
                     lonm=liste[5][3:10]
                     print("Laenge: "+lon+"  "+lonm+" "+liste[6])
                     try:
+                        # dankward sollte durch den Namen des home-Verzeichnis ersetzt werden.
                        with open('/media/dankward/DATA/'+dateiname+'.csv','a') as file:
                            zeile = tag+","+h+","+m+","+s+","+lat+","+latm+","+lon+","+lonm+"\r\n"
                            file.write(zeile)
                     except FileNotFoundError:
+                        # dankward sollte durch den Namen des home-Verzeichnis ersetzt werden.
                         with open('/home/dankward/'+dateiname+'.csv','a') as file:
                            zeile = tag+","+h+","+m+","+s+","+lat+","+latm+","+lon+","+lonm+"\r\n"
                            file.write(zeile)
