@@ -1,4 +1,4 @@
-#!/usr/bin/python3                                                                                                                                #!/usr/bin/pythoimport serial
+#!/usr/bin/python3                                                                                                                               
 from time import sleep
 import serial
 ser=serial.Serial("/dev/ttyACM0",9600)
@@ -32,10 +32,12 @@ try:
                     print("Laenge: "+lon+"  "+lonm+" "+liste[6])
                     try:
                        with open('/media/dankward/DATA/gps.csv','a') as file:
+                           # dankward sollte durch den Namen des home-Verzeichnis ersetzt werden.
                            zeile = tag+","+h+","+m+","+s+","+lat+","+latm+","+lon+","+lonm+"\r\n"
                            file.write(zeile)
                     except FileNotFoundError:
                         with open('/home/dankward/gps.csv','a') as file:
+                            # dankward sollte durch den Namen des home-Verzeichnis ersetzt werden.
                            zeile = tag+","+h+","+m+","+s+","+lat+","+latm+","+lon+","+lonm+"\r\n"
                            file.write(zeile)
 except:
