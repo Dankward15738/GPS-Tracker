@@ -5,3 +5,5 @@ Die Datei 'gpausleseneinautoname.py' unterscheidet sich von der ersten Datei dad
 Das Script sollte ebenfalls mit cron aufgerufen werden.
 
 Die Datei 'gpausleseneinautonamegpx.py' ist schließlich ein Script, das auf dem Stick mit dem Namen DATA sowohl eine CSV-Datei erstellt, bzw. erweitert als auch eine einfache gpx-Datei. Bei der ersten Aufzeichnung wird der Kopf der gpx-Datei erstellt und beim Herausziehen des Steckers der GPS-Maus aus dem USB-Port des Rasberry Pi's wird das Fußende der GPX-Datei erstellt und damit diese abgeschlossen.
+
+Der kürzeste Abstand, mit dem man mit cron jobs ausführen kann, ist 1 Minute. Mit dem bash-Script gpsauslesen.sh habe ich den Abstand auf 10 Sekunden verkürzt.
