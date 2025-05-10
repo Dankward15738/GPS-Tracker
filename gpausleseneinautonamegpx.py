@@ -9,14 +9,16 @@ import serial
 import os
 try:
     ser=serial.Serial("/dev/ttyACM0",9600)
-except:
     
-    with open('/media/dankward/DATA/speicher.txt','r')as file:
-        dateiname=file.read()
-        with open(dateiname,'a') as file:
-            file.write("  </trkseg>\r\n")
-            file.write(" </trk>\r\n")
-            file.write("</gpx>\r\n")
+except:
+    if os.path.exists('/media/dankward/DATA/speicher.txt'):
+        with open('/media/dankward/DATA/speicher.txt','r')as file:
+            dateiname=file.read()
+            os.remove('/media/dankward/DATA/speicher.txt')
+            with open(dateiname,'a') as file:
+                file.write("  </trkseg>\r\n")
+                file.write(" </trk>\r\n")
+                file.write("</gpx>\r\n")
 try:
     received_data = ser.read(500)
     #print(received_data)
